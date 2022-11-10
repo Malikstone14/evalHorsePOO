@@ -8,12 +8,11 @@ abstract class Human{
 
     public string $name;
     protected Address $address;
-    protected Manager $manager;
 
-    public function __construct(string $name, string $street, string $postalCode, string $city)
+    public function __construct(string $name, Address $address)
     {
         $this->setName($name);
-        $this->address = new Address($street, $postalCode, $city);
+        $this->address = $address;
 
 
     }
@@ -38,5 +37,10 @@ abstract class Human{
         $this->name = $name;
 
         return $this;
+    }
+
+    Public function __toString()
+    {
+        return "My name is {$this->getName()} and i live in {$this->address->getPostCode()} , {$this->address->getCity()} at {$this->address->getStreet()}.";
     }
 }

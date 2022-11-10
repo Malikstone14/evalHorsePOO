@@ -16,7 +16,7 @@ class Address{
     /**
      * Get the value of city
      */ 
-    public function getCity()
+    public function getCity(): string
     {
         return $this->city;
     }
@@ -26,7 +26,7 @@ class Address{
      *
      * @return  self
      */ 
-    public function setCity($city)
+    public function setCity($city): self
     {
         $this->city = $city;
 
@@ -34,21 +34,21 @@ class Address{
     }
 
     /**
-     * Get the value of posteCode
+     * Get the value of postCode
      */ 
-    public function getPostCode()
+    public function getPostCode(): string
     {
         return $this->postCode;
     }
 
     /**
-     * Set the value of posteCode
+     * Set the value of postCode
      *
      * @return  self
      */ 
-    public function setPostCode($postCode)
+    public function setPostCode($postCode): self
     {
-        $this->posteCode = $postCode;
+        $this->postCode = $postCode;
 
         return $this;
     }
@@ -56,7 +56,7 @@ class Address{
     /**
      * Get the value of street
      */ 
-    public function getStreet()
+    public function getStreet(): string
     {
         return $this->street;
     }
@@ -66,7 +66,7 @@ class Address{
      *
      * @return  self
      */ 
-    public function setStreet($street)
+    public function setStreet($street): self
     {
         $this->street = $street;
 

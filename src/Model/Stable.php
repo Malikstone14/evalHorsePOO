@@ -11,10 +11,10 @@ class Stable{
     protected Manager $manager;
 
 
-    public function __construct(string $nameStable, string $street, string $postCode, string $city , Manager $manager)
+    public function __construct(string $nameStable,Address $address , Manager $manager)
     {
         $this->setnameStable($nameStable);
-        $this->address = new Address($street, $postCode, $city);
+        $this->address = $address;
         $this->manager = $manager;
         
         
@@ -42,6 +42,6 @@ class Stable{
 
     public function __toString()
     {
-        return "L'écurie {$this->getnameStable()} qui est dans la ville de {$this->address->getCity()} appartient au Manager {$this->manager->getName()}";
+        return "Stable {$this->getnameStable()} who is in the city of  {$this->address->getCity()} belongs to the Manager {$this->manager->getName()}";
     }
 }

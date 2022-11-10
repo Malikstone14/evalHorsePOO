@@ -2,44 +2,27 @@
 
 namespace App\Model;
 
-use App\Model\Human;
+
+use App\Model\Address;
+use App\Model\Categorie;
 
 
 class Manager extends Categorie{
 
     private string $categorie;
 
-    public function __construct(string $city , string $postalCode, string $street, string $name, $categorie = "Manager"){
+    public function __construct( string $name, Address $address, $categorie = "Manager"){
         $this->categorie = $categorie;
-        parent::__construct( $city, $postalCode, $street, $name);
+        parent::__construct( $name , $address);
         
     }
 
 
-    /**
-     * Get the value of name
-     */ 
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set the value of name
-     *
-     * @return  self
-     */ 
-    public function setName($name): self
-    {
-        $this->name = $name;
-
-        return $this;
-    }
 
     /**
      * Get the value of manager
      */ 
-    public function getCategorie()
+    public function getCategorie(): string
     {
         return $this->categorie;
     }
@@ -54,5 +37,10 @@ class Manager extends Categorie{
         $this->manager = $categorie;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return parent::__toString() . "And I'm {$this->getCategorie()}";
     }
 }
